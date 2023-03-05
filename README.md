@@ -19,7 +19,3 @@ This project was built using:
 Authors
 
     Your Name - GokulBakkiyarasu
-
-License
-
-This project is licensed under the [License Name] - see the LICENSE.md file for details.
