@@ -111,9 +111,11 @@ def transactions():
         if total > cost:
             balance = total - cost
             print(f"Here is {balance} in change.")
+        return True
     else:
         print("Sorry that's not enough money. Money refunded.")
-
+        return False
+    
 
 def coin_input():
     print("Please insert coins.")
@@ -131,9 +133,11 @@ while should_continue:
     user_input = input("What would you like? (espresso/latte/cappuccino): ")
     if user_input == "espresso" or user_input == "latte" or user_input == "cappuccino":
         required_amount()
+       
         if total_water > required_water and total_milk > required_milk and total_coffee > required_coffee and (user_input == "latte" or "cappuccino" or "espresso"):
-            transactions()
-            available_amount()
+            success=transactions()
+            if success:
+                available_amount()
         else:
             if total_water < required_water:
                 print(f"Sorry, there is not enough water to make your {user_input}☕.")
